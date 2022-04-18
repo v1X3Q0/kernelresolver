@@ -3,17 +3,20 @@
 
 #include <mach/mach_types.h>
 #include <mach-o/loader.h>
-#include <sys/systm.h>
+#include <mach-o/getsect.h>
 #include <sys/types.h>
-#include <vm/vm_kern.h>
 #include <sys/sysctl.h>
+// #include <sys/systm.h>
+// #include <vm/vm_kern.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
     
-    void *lookup_symbol(const char *symbol);
-    
+int lookup_symbol(const char *symbol, void** symbol_out);
+int find_symbol(struct mach_header_64 *mh, const char *name, void** symaddr_out);
+struct segment_command_64* find_segment_64(struct mach_header_64 *mh, const char *segname);
+
 #ifdef __cplusplus
 }
 #endif
