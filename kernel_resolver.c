@@ -183,7 +183,7 @@ int resolve_live_symbol(struct mach_header_64* mach_static, struct mach_header_6
     result = 0;
     if (symbol_out != 0)
     {
-        symbol_out = symbol - section_64_static->addr + section_64_live->addr;    
+        *symbol_out = symTmp - section_64_static->addr + section_64_live->addr;
     }
 fail:
     return result;
