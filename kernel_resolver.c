@@ -45,7 +45,7 @@ int lookup_symbol(const char *symbol, void** symbol_out)
     slide = kernBase - KERNEL_BASE;
 
     IOLog("%s: aslr slide: 0x%0llx\n", __func__, slide);
-    IOLog("%s: base address: 0x%0llx\n", __func__, kernBase);
+    IOLog("%s: base address: 0x%0lx\n", __func__, kernBase);
 
     SAFE_BAIL(find_symbol((struct mach_header_64 *)kernBase, symbol, symTarg) == -1);
 
@@ -170,7 +170,7 @@ int resolve_live_symbol(struct mach_header_64* mach_static, struct mach_header_6
     int result = -1;
     void* symTmp = 0;
     struct section_64* section_64_static = 0;
-    struct section_64* section_64_live = 0;
+    const struct section_64* section_64_live = 0;
 
     // on the read file
     SAFE_BAIL(find_symbol(mach_static, symbol, &symTmp) == -1);
