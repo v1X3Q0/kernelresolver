@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.10.0)
 project(kernelresolver)
 
 if(NOT DEFINED ANDROID_TOOL_BASE)
