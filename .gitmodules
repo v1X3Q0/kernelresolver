@@ -1,0 +1,9 @@
+[submodule "common/krw_util"]
+	path = common/krw_util
+	url = https://github.com/v1X3Q0/krw_util.git
+[submodule "common/local_util"]
+	path = common/local_util
+	url = https://github.com/v1X3Q0/local_util.git
+[submodule "xnu/rw_kext"]
+	path = xnu/rw_kext
+	url = http://192.168.77.136/mac/rw_kext.git
